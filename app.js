@@ -33,9 +33,9 @@ function calculateResults(e) {
     totalPayment.value = (monthly * calculatedPayments).toFixed(2);
     totalInterest.value = (monthly * calculatedPayments - principal).toFixed(2);
 
-    // Hide the loader
+    // Hide the Loader
     document.querySelector("#loading").style.display = "none";
-
+    // Show the Results
     document.querySelector("#results").style.display = "block";
   } else {
     showError("Please Check Your Numbers");
@@ -44,20 +44,15 @@ function calculateResults(e) {
   function showError(error) {
     // Hide the loader
     document.querySelector("#loading").style.display = "none";
-
     // Create HTML for the error
     let errorHtml = `
         <div class ="alert alert-danger">${error}</div> 
         `;
     document.querySelector(".card").insertAdjacentHTML("afterbegin", errorHtml);
-
-    // Hide the alert after 3 seconds
+    // Hide the alert after 2 seconds
     setTimeout(clearDiv, 2000);
   }
 }
-
 function clearDiv() {
   document.querySelector(".alert").remove();
 }
-
-function removeEventListner() {}
